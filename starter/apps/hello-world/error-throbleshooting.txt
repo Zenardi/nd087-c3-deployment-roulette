@@ -1,0 +1,53 @@
+➜  nd087-c3-deployment-roulette $ kubectl get pods -n udacity
+NAME                          READY   STATUS    RESTARTS   AGE
+blue-54sdasvt47-gma44         1/1     Running   0          1m44s
+blue-54sdasvt47-vga4a         1/1     Running   0          1m44s
+blue-54sdasvt47-zrr4c         1/1     Running   0          1m50s
+canary-v1-125sa5123b-gn12s    1/1     Running   0          2m16s
+canary-v1-125sa5123b-vme31    1/1     Running   0          2m22s
+canary-v1-125sa5123b-wrsws    1/1     Running   0          2m42s
+hello-world-23fsdssa-vf32f   1/1     Running   6          3m12s
+
+➜  nd087-c3-deployment-roulette $ kubectl -n udacity logs -f deployment/hello-world
+Ready to receive requests on 9000
+ * Serving Flask app 'main' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.100.1.224:9000/ (Press CTRL+C to quit)
+Failed health check you want to ping /healthz
+10.100.1.244 - - [30/Jun/2022 18:10:15] "GET /nginx_status HTTP/1.1" 500 -
+Failed health check you want to ping /healthz
+10.100.1.244 - - [30/Jun/2022 18:10:17] "GET /nginx_status HTTP/1.1" 500 -
+Failed health check you want to ping /healthz
+10.100.1.244 - - [30/Jun/2022 18:10:19] "GET /nginx_status HTTP/1.1" 500 -
+
+➜  nd087-c3-deployment-roulette/apps/hello-world [main *=]$ kubectl apply -f hello.yml 
+deployment.apps/hello-world created
+service/hello-world created
+
+➜  nd087-c3-deployment-roulette/apps/hello-world [main *=]$ kubectl logs hello-world-878435d64d-fdvta
+Ready to receive requests on 9000
+ * Serving Flask app 'main' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://10.100.1.208:9000/ (Press CTRL+C to quit)
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:15:30] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:15:32] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:15:42] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:15:46] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:15:58] "GET /healthz HTTP/1.1" 200 -
+Healthy!
+10.100.1.1 - - [01/Ago/2022 09:16:21] "GET /healthz HTTP/1.1" 200 -

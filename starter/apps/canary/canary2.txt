@@ -1,0 +1,16 @@
+➜  nd087-c3-deployment-roulette $ kubectl get pods --all-namespaces
+NAMESPACE     NAME                           READY   STATUS    RESTARTS   AGE
+kube-system   aws-node-j745s                 1/1     Running   0          86m
+kube-system   aws-node-4sds4                 1/1     Running   0          86m
+kube-system   coredns-b7634fbb4-6dsd4        1/1     Running   0          91m
+kube-system   coredns-b7634fbb4-94sdf        1/1     Running   0          91m
+kube-system   kube-proxy-nk99r               1/1     Running   0          86m
+kube-system   kube-proxy-s5r5g               1/1     Running   0          86m
+udacity       blue-54sdasvt47-gma44          1/1     Running   0          56m
+udacity       blue-54sdasvt47-vga4a          1/1     Running   0          56m
+udacity       blue-54sdasvt47-zrr4c          1/1     Running   0          56m
+udacity       canary-v1-125sa5123b-gn12s     1/1     Running   0          79m
+udacity       canary-v1-64598c676f-mnzls     1/1     Running   0          79m
+udacity       canary-v1-125sa5123b-vme31     1/1     Running   0          2m41s
+udacity       canary-v1-125sa5123b-wrsws     1/1     Running   0          3m35s
+udacity       hello-world-23fsdssa-vf32f     1/1     Running   0          40m

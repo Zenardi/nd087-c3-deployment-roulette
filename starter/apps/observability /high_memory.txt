@@ -1,0 +1,42 @@
+➜  nd087-c3-deployment-roulette $ kubectl top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+blue-54sdasvt47-gma44          1m           3Mi             
+blue-54sdasvt47-vga4a          1m           3Mi             
+blue-54sdasvt47-zrr4c          1m           3Mi             
+canary-v1-125sa5123b-gn1       0m           3Mi             
+canary-v1-64598c676f-mnzls     0m           3Mi             
+canary-v1-125sa5123b-vme31     0m           3Mi             
+canary-v1-125sa5123b-wrsws     0m           3Mi             
+green-5cdd96c9b4-9vj9l         1m           3Mi             
+green-5cdd96c9b4-dx4jr         1m           3Mi             
+green-5cdd96c9b4-jhjsp         1m           3Mi             
+hello-world-23fsdssa-vf32f     1m           19Mi
+
+## BEFORE
+➜  nd087-c3-deployment-roulette $ kubectl top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+blue-54sdasvt47-gma44          1m           3Mi             
+blue-54sdasvt47-vga4a          1m           3Mi             
+blue-54sdasvt47-zrr4c          1m           3Mi             
+canary-v1-125sa5123b-gn1       0m           3Mi             
+canary-v1-64598c676f-mnzls     0m           3Mi             
+canary-v1-125sa5123b-vme31     0m           3Mi             
+canary-v1-125sa5123b-wrsws     0m           3Mi             
+green-5cdd96c9b4-9vj9l         1m           3Mi             
+green-5cdd96c9b4-dx4jr         1m           3Mi             
+green-5cdd96c9b4-jhjsp         1m           3Mi             
+hello-world-23fsdssa-vf32f     1m           20Mi
+
+# AFTER
+➜  nd087-c3-deployment-roulette $ kubectl top pods
+NAME                           CPU(cores)   MEMORY(bytes)   
+blue-54sdasvt47-gma44          1m           3Mi             
+blue-54sdasvt47-vga4a          1m           3Mi             
+blue-54sdasvt47-zrr4c          1m           3Mi             
+canary-v1-125sa5123b-gn1       0m           3Mi             
+canary-v1-64598c676f-mnzls     0m           3Mi             
+canary-v1-125sa5123b-vme31     0m           3Mi             
+canary-v1-125sa5123b-wrsws     0m           3Mi             
+green-5cdd96c9b4-9vj9l         1m           3Mi             
+green-5cdd96c9b4-dx4jr         1m           3Mi             
+green-5cdd96c9b4-jhjsp         1m           3Mi             
